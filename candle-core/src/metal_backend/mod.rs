@@ -1629,7 +1629,7 @@ impl BackendDevice for MetalDevice {
         let seed = Arc::new(Mutex::new(device.new_buffer_with_data(
             [299792458].as_ptr() as *const c_void,
             4,
-            MTLResourceOptions::StorageModeManaged,
+            MTLResourceOptions::StorageModeShared,
         )));
         Ok(Self {
             id: DeviceId::new(),
